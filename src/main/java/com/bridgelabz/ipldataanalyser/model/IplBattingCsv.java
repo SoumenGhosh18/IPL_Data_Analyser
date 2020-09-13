@@ -6,7 +6,7 @@ public class IplBattingCsv {
     @CsvBindByName(column = "PLAYER", required = true)
     public String playerName;
     @CsvBindByName(column = "Avg", required = true)
-    public double avg;
+     public double avg;
     @CsvBindByName(column = "SR", required = true)
     public double sr;
     @CsvBindByName(column = "6s", required = true)

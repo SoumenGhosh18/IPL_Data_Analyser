@@ -1,6 +1,6 @@
 package com.bridgelabz.ipldataanalyser.exception;
 
-public class IplAnalyserException extends Exception{
+public class IplAnalyserException extends Throwable{
     public enum ExceptionType  {
         CENSUS_FILE_PROBLEM,NO_CENSUS_DATA
     }

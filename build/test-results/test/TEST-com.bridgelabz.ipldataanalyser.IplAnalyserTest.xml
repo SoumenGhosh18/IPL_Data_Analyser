@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.bridgelabz.ipldataanalyser.IplAnalyserTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-09-13T13:27:49" hostname="DESKTOP-H88E5E6" time="0.6">
+<testsuite name="com.bridgelabz.ipldataanalyser.IplAnalyserTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2020-09-13T17:01:28" hostname="DESKTOP-H88E5E6" time="1.307">
   <properties/>
-  <testcase name="givenIplHighest6sDataShouldReturnCorrectResult" classname="com.bridgelabz.ipldataanalyser.IplAnalyserTest" time="0.6"/>
+  <testcase name="givenIplBestBattingSRDataWith6sAnd4s" classname="com.bridgelabz.ipldataanalyser.IplAnalyserTest" time="0.582"/>
+  <testcase name="IplBattingDataShouldReturnCorrectRecords" classname="com.bridgelabz.ipldataanalyser.IplAnalyserTest" time="0.183"/>
+  <testcase name="givenIplBestBattingSRDataShouldReturnCorrectResult" classname="com.bridgelabz.ipldataanalyser.IplAnalyserTest" time="0.149"/>
+  <testcase name="IplBowlingDataShouldReturnCorrectRecords" classname="com.bridgelabz.ipldataanalyser.IplAnalyserTest" time="0.078"/>
+  <testcase name="givenIplHighest6sDataShouldReturnCorrectResult" classname="com.bridgelabz.ipldataanalyser.IplAnalyserTest" time="0.152"/>
+  <testcase name="givenIplBestBattingAvgDataShouldReturnCorrectResult" classname="com.bridgelabz.ipldataanalyser.IplAnalyserTest" time="0.159"/>
   <system-out><![CDATA[IplBattingCsv{slNo=0, playerName='Andre Russell', avg=56.66, sr=204.81, highest6s=52, highest4s=31}
+IplBattingCsv{slNo=0, playerName='Ishant Sharma', avg=0.0, sr=333.33, highest6s=1, highest4s=1}
+IplBattingCsv{slNo=0, playerName='Andre Russell', avg=56.66, sr=204.81, highest6s=52, highest4s=31}
+IplBattingCsv{slNo=0, playerName='MS Dhoni', avg=83.2, sr=134.62, highest6s=23, highest4s=22}
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

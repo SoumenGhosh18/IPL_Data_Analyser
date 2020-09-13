@@ -8,7 +8,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class IplAnalyserTest {
-    private final String IPL_BATTING_FILE_PATH = "E:\\IPL_Data_Analyser\\src\\test\\resources\\IplMostRuns.csv";
+    private final String IPL_BATTING_FILE_PATH= "E:\\IPL_Data_Analyser\\src\\test\\resources\\IplMostRuns.csv";
     private final String IPL_BOWLING_FILE_PATH = "E:\\IPL_Data_Analyser\\src\\test\\resources\\IplMostWicket.csv";
 
     @Test
@@ -52,7 +52,7 @@ public class IplAnalyserTest {
             iplAnalyser.LoadIplBattingData(IPL_BATTING_FILE_PATH);
             String sortedCensusData = iplAnalyser.getBestBattingSR();
             IplBattingCsv censusCsv[] = new Gson().fromJson(sortedCensusData, IplBattingCsv[].class);
-            Assert.assertEquals("Andre Russell", censusCsv[0].playerName);
+            Assert.assertEquals("Ishant Sharma", censusCsv[0].playerName);
             System.out.println(censusCsv[0]);
         } catch (IplAnalyserException e) {
             e.printStackTrace();
@@ -67,11 +67,23 @@ public class IplAnalyserTest {
             String sortedCensusData1 = iplAnalyser.getHighest4s();
             IplBattingCsv censusCsv[] = new Gson().fromJson(sortedCensusData, IplBattingCsv[].class);
             IplBattingCsv censusCsv1[] = new Gson().fromJson(sortedCensusData1, IplBattingCsv[].class);
+           Assert.assertEquals("Andre Russell", censusCsv[0].playerName);
+            System.out.println(censusCsv[0]);
+        } catch (IplAnalyserException e) {
+            e.printStackTrace();
+        }
+    }
+    @Test
+    public void givenIplBestBattingSRDataWith6sAnd4s() {
+        try {
+            IplAnalyser iplAnalyser = new IplAnalyser();
+            iplAnalyser.LoadIplBattingData(IPL_BATTING_FILE_PATH);
+            String sortedCensusData = iplAnalyser.getHighestStrikeRateWith6sAnd4s();
+            IplBattingCsv censusCsv[] = new Gson().fromJson(sortedCensusData, IplBattingCsv[].class);
             Assert.assertEquals("Andre Russell", censusCsv[0].playerName);
             System.out.println(censusCsv[0]);
         } catch (IplAnalyserException e) {
             e.printStackTrace();
         }
     }
-
 }

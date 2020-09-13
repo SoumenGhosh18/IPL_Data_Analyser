@@ -58,7 +58,15 @@ public class IplAnalyser {
         if (censusMap == null || censusMap.size() == 0) {
             throw new IplAnalyserException("NO Census Data", IplAnalyserException.ExceptionType.NO_CENSUS_DATA);
         }
-        Comparator<IplDao> censusComparator = Comparator.comparing(census -> census.highest4s);
+        Comparator<IplDao> censusComparator = Comparator.comparing(census -> census.highest4s );
+        List sortedResult = this.sort(censusComparator.reversed());
+        return new Gson().toJson(sortedResult);
+    }
+    public String getHighestStrikeRateWith6sAnd4s() throws IplAnalyserException {
+        if (censusMap == null || censusMap.size() == 0) {
+            throw new IplAnalyserException("NO Census Data", IplAnalyserException.ExceptionType.NO_CENSUS_DATA);
+        }
+        Comparator<IplDao> censusComparator = Comparator.comparing(census -> census.highest6s + census.highest4s);
         List sortedResult = this.sort(censusComparator.reversed());
         return new Gson().toJson(sortedResult);
     }
