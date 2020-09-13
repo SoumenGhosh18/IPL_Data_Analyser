@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.bridgelabz.ipldataanalyser.IplAnalyserTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-09-13T11:07:44" hostname="DESKTOP-H88E5E6" time="0.836">
+<testsuite name="com.bridgelabz.ipldataanalyser.IplAnalyserTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-09-13T11:26:53" hostname="DESKTOP-H88E5E6" time="0.622">
   <properties/>
-  <testcase name="givenIplBestBattingSRDataShouldReturnCorrectResult" classname="com.bridgelabz.ipldataanalyser.IplAnalyserTest" time="0.836"/>
-  <system-out><![CDATA[IplBattingCsv{slNo=0, playerName='Andre Russell', avg=56.66, sr=204.81}
+  <testcase name="givenIplHighest6sDataShouldReturnCorrectResult" classname="com.bridgelabz.ipldataanalyser.IplAnalyserTest" time="0.622"/>
+  <system-out><![CDATA[IplBattingCsv{slNo=0, playerName='Andre Russell', avg=56.66, sr=204.81, highest6s=52, highest4s=0}
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

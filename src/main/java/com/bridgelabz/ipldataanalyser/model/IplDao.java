@@ -5,12 +5,16 @@ public class IplDao {
     public String playerName;
     public double avg;
     public double sr;
+    public int highest6s;
+    public int Highest4s;
 
     public IplDao(IplBattingCsv iplBattingCsv) {
         slNO = iplBattingCsv.slNo;
         playerName = iplBattingCsv.playerName;
         avg = iplBattingCsv.avg;
         sr = iplBattingCsv.sr;
+        highest6s = iplBattingCsv.highest6s;
+        Highest4s = iplBattingCsv.highest4s;
     }
 
     public IplDao(IplBowlingCsv iplBowlingCsv){
