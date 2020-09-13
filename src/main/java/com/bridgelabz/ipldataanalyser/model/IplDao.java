@@ -7,7 +7,7 @@ public class IplDao {
     public double sr;
     public int highest6s;
     public int highest4s;
-
+   public int Inns;
     public IplDao(IplBattingCsv iplBattingCsv) {
         slNO = iplBattingCsv.slNo;
         playerName = iplBattingCsv.playerName;
@@ -15,6 +15,7 @@ public class IplDao {
         sr = iplBattingCsv.sr;
         highest6s = iplBattingCsv.highest6s;
         highest4s = iplBattingCsv.highest4s;
+        Inns =iplBattingCsv.Inns;
     }
 
     public IplDao(IplBowlingCsv iplBowlingCsv){

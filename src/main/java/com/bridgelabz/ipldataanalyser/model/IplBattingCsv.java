@@ -13,6 +13,8 @@ public class IplBattingCsv {
     public int highest6s;
     @CsvBindByName(column = "4s", required = true)
     public int highest4s;
+    @CsvBindByName(column = "Inns", required = true)
+    public int Inns;
 
     @Override
     public String toString() {
