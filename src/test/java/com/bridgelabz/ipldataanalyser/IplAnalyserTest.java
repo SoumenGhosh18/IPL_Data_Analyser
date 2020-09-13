@@ -94,13 +94,27 @@ public class IplAnalyserTest {
     }
 
     @Test
-    public void  givenIPLMostRunsCSVFile_ShouldReturnCricketerWhoHad_GreatAverageWithBestStrikeRate() {
+    public void givenIPLMostAvg_WhoHad_GreatAverageWithBestStrikeRate() {
         try {
             IplAnalyser iplAnalyser = new IplAnalyser();
             iplAnalyser.LoadIplBattingData(IPL_BATTING_FILE_PATH);
             String sortedCensusData = iplAnalyser.getBestAvgWithGreatStrikeRate();
             IplBattingCsv censusCsv[] = new Gson().fromJson(sortedCensusData, IplBattingCsv[].class);
             Assert.assertEquals("Ishant Sharma", censusCsv[0].playerName);
+            System.out.println(censusCsv[0]);
+        } catch (IplAnalyserException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void givenIPLMostRuns_ShouldReturnCricketerWhoHad_GreatAverageWithBestStrikeRate() {
+        try {
+            IplAnalyser iplAnalyser = new IplAnalyser();
+            iplAnalyser.LoadIplBattingData(IPL_BATTING_FILE_PATH);
+            String sortedCensusData = iplAnalyser.getTopRunWithBestStrikeRate();
+            IplBattingCsv censusCsv[] = new Gson().fromJson(sortedCensusData, IplBattingCsv[].class);
+            Assert.assertEquals("David Warner", censusCsv[0].playerName);
             System.out.println(censusCsv[0]);
         } catch (IplAnalyserException e) {
             e.printStackTrace();

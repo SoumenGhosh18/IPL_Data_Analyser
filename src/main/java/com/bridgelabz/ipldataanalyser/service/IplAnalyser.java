@@ -78,6 +78,15 @@ public class IplAnalyser {
         List sortedResult = this.sort(censusComparator.reversed());
         return new Gson().toJson(sortedResult);
     }
+    public String getTopRunWithBestStrikeRate() throws IplAnalyserException {
+        if (censusMap == null || censusMap.size() == 0) {
+            throw new IplAnalyserException("NO Census Data", IplAnalyserException.ExceptionType.NO_CENSUS_DATA);
+        }
+        Comparator<IplDao> censusComparator = Comparator.comparing(census -> census.Runs + census.sr);
+        List sortedResult = this.sort(censusComparator.reversed());
+        return new Gson().toJson(sortedResult);
+    }
+
     private List sort(Comparator<IplDao> censusComparator) {
         List sortedResult = censusMap.values().stream().sorted(censusComparator).collect(Collectors.toList());
         return sortedResult;
