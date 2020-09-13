@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.bridgelabz.ipldataanalyser.IplAnalyserTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-09-13T20:45:09" hostname="DESKTOP-H88E5E6" time="0.515">
+<testsuite name="com.bridgelabz.ipldataanalyser.IplAnalyserTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-09-13T20:53:08" hostname="DESKTOP-H88E5E6" time="0.552">
   <properties/>
-  <testcase name="givenIPLData_Should_Return_Top_StrikeRateAndTopAvg" classname="com.bridgelabz.ipldataanalyser.IplAnalyserTest" time="0.515"/>
-  <system-out><![CDATA[IplBowlingCsv{slNo=0, playerName='Alzarri Joseph', Avg='14.5', SR='8.66', Econ='10.03'}
+  <testcase name="givenIPLData_Should_Return_Top_Wicket_AndTopAvg" classname="com.bridgelabz.ipldataanalyser.IplAnalyserTest" time="0.552"/>
+  <system-out><![CDATA[IplBowlingCsv{slNo=0, playerName='Keemo Paul', Wkts='9', Avg='26.33', SR='18.11', Econ='8.72'}
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

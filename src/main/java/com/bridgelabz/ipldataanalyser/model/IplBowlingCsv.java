@@ -19,12 +19,17 @@ public class IplBowlingCsv {
     @CsvBindByName(column = "Econ", required = true)
     public String Econ;
 
+
+    @CsvBindByName(column = "Wkts", required = true)
+    public String Wkts;
+
+
     @Override
     public String toString() {
         return "IplBowlingCsv{" +
                 "slNo=" + slNo +
                 ", playerName='" + playerName + '\'' +
-//                ", Wkts='" + Wkts + '\'' +
+               ", Wkts='" + Wkts + '\'' +
                 ", Avg='" + Avg + '\'' +
                 ", SR='" + SR + '\'' +
                 ", Econ='" + Econ + '\'' +

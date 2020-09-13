@@ -12,6 +12,8 @@ public class IplDao {
     public double Avg;
     public String Econ;
     public String SR;
+    public String Wkts;
+
     public IplDao(IplBattingCsv iplBattingCsv) {
         slNO = iplBattingCsv.slNo;
         playerName = iplBattingCsv.playerName;
@@ -29,6 +31,7 @@ public class IplDao {
         playerName = iplBowlingCsv.playerName;
         Econ = iplBowlingCsv.Econ;
         SR = iplBowlingCsv.SR;
+        Wkts = iplBowlingCsv.Wkts;
 
     }
 }

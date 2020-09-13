@@ -176,4 +176,17 @@ public class IplAnalyserTest {
             e.printStackTrace();
         }
     }
+    @Test
+    public void givenIPLData_Should_Return_Top_Wicket_AndTopAvg() {
+        try {
+            IplAnalyser iplAnalyser = new IplAnalyser();
+            iplAnalyser.LoadIplBowlingData(IPL_BOWLING_FILE_PATH);
+            String sortedCensusData = iplAnalyser.getTopWkctWithBestAvgOftheBowler();
+            IplBowlingCsv censusCsv[] = new Gson().fromJson(sortedCensusData, IplBowlingCsv[].class);
+            Assert.assertEquals("Keemo Paul", censusCsv[0].playerName);
+            System.out.println(censusCsv[0]);
+        } catch (IplAnalyserException e) {
+            e.printStackTrace();
+        }
+    }
 }
