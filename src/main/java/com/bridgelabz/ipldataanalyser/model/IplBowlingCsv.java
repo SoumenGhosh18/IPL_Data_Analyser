@@ -13,9 +13,8 @@ public class IplBowlingCsv {
 
     @CsvBindByName(column = "Avg", required = true)
     public double Avg;
-
-//    @CsvBindByName(column = "SR", required = true)
-//    public String SR;
+    @CsvBindByName(column = "SR", required = true)
+    public String SR;
 //
 //    @CsvBindByName(column = "Econ", required = true)
 //    public String Econ;
@@ -27,7 +26,7 @@ public class IplBowlingCsv {
                 ", playerName='" + playerName + '\'' +
 //                ", Wkts='" + Wkts + '\'' +
                 ", Avg='" + Avg + '\'' +
-              //  ", SR='" + SR + '\'' +
+                ", SR='" + SR + '\'' +
                 //", Econ='" + Econ + '\'' +
                 '}';
     }

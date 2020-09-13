@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.bridgelabz.ipldataanalyser.IplAnalyserTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-09-13T19:28:11" hostname="DESKTOP-H88E5E6" time="0.634">
+<testsuite name="com.bridgelabz.ipldataanalyser.IplAnalyserTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-09-13T20:30:37" hostname="DESKTOP-H88E5E6" time="0.497">
   <properties/>
-  <testcase name="givenIPLMostWicketsCSVFile_ShouldReturn_BestBowlingAverage" classname="com.bridgelabz.ipldataanalyser.IplAnalyserTest" time="0.634"/>
-  <system-out><![CDATA[IplBowlingCsv{slNo=0, playerName='Krishnappa Gowtham', Avg='166.0'}
+  <testcase name="givenIPLData_Should_Return_Top_StrikeRate" classname="com.bridgelabz.ipldataanalyser.IplAnalyserTest" time="0.497"/>
+  <system-out><![CDATA[IplBowlingCsv{slNo=0, playerName='Umesh Yadav', Avg='46.37', SR='28.37'}
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

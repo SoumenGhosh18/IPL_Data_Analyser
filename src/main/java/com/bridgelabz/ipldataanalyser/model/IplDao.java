@@ -29,7 +29,7 @@ public class IplDao {
         playerName = iplBowlingCsv.playerName;
 
         //  Econ = iplBowlingCsv.Econ;
-       // SR = iplBowlingCsv.SR;
+       SR = iplBowlingCsv.SR;
 
     }
 }
