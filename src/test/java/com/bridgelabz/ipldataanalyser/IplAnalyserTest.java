@@ -63,8 +63,10 @@ public class IplAnalyserTest {
         try {
             IplAnalyser iplAnalyser = new IplAnalyser();
             iplAnalyser.LoadIplBattingData(IPL_BATTING_FILE_PATH);
-            String sortedCensusData = iplAnalyser.getHighestBoundries();
+            String sortedCensusData = iplAnalyser.getHighest6s();
+            String sortedCensusData1 = iplAnalyser.getHighest4s();
             IplBattingCsv censusCsv[] = new Gson().fromJson(sortedCensusData, IplBattingCsv[].class);
+            IplBattingCsv censusCsv1[] = new Gson().fromJson(sortedCensusData1, IplBattingCsv[].class);
             Assert.assertEquals("Andre Russell", censusCsv[0].playerName);
             System.out.println(censusCsv[0]);
         } catch (IplAnalyserException e) {

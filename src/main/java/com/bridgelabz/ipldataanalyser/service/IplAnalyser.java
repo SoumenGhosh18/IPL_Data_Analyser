@@ -41,15 +41,24 @@ public class IplAnalyser {
     public String getBestBattingSR() throws IplAnalyserException {
         if (censusMap == null || censusMap.size() == 0) {
             throw new IplAnalyserException("NO Census Data", IplAnalyserException.ExceptionType.NO_CENSUS_DATA);
-        }        Comparator<IplDao> censusComparator = Comparator.comparing(census -> census.sr);
+        }
+        Comparator<IplDao> censusComparator = Comparator.comparing(census -> census.sr);
         List sortedResult = this.sort(censusComparator.reversed());
         return new Gson().toJson(sortedResult);
     }
-    public String getHighestBoundries() throws IplAnalyserException {
+    public String getHighest6s() throws IplAnalyserException {
         if (censusMap == null || censusMap.size() == 0) {
             throw new IplAnalyserException("NO Census Data", IplAnalyserException.ExceptionType.NO_CENSUS_DATA);
         }
-        Comparator<IplDao> censusComparator = Comparator.comparing(census -> (census.highest6s + census.Highest4s));
+        Comparator<IplDao> censusComparator = Comparator.comparing(census -> (census.highest4s + census.highest6s));
+        List sortedResult = this.sort(censusComparator.reversed());
+        return new Gson().toJson(sortedResult);
+    }
+    public String getHighest4s() throws IplAnalyserException {
+        if (censusMap == null || censusMap.size() == 0) {
+            throw new IplAnalyserException("NO Census Data", IplAnalyserException.ExceptionType.NO_CENSUS_DATA);
+        }
+        Comparator<IplDao> censusComparator = Comparator.comparing(census -> census.highest4s);
         List sortedResult = this.sort(censusComparator.reversed());
         return new Gson().toJson(sortedResult);
     }
