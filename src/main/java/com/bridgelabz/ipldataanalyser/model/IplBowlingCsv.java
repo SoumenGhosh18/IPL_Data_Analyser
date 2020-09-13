@@ -15,9 +15,9 @@ public class IplBowlingCsv {
     public double Avg;
     @CsvBindByName(column = "SR", required = true)
     public String SR;
-//
-//    @CsvBindByName(column = "Econ", required = true)
-//    public String Econ;
+
+    @CsvBindByName(column = "Econ", required = true)
+    public String Econ;
 
     @Override
     public String toString() {
@@ -27,7 +27,7 @@ public class IplBowlingCsv {
 //                ", Wkts='" + Wkts + '\'' +
                 ", Avg='" + Avg + '\'' +
                 ", SR='" + SR + '\'' +
-                //", Econ='" + Econ + '\'' +
+                ", Econ='" + Econ + '\'' +
                 '}';
     }
 }

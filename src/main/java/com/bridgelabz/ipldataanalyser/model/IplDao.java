@@ -27,9 +27,8 @@ public class IplDao {
         slNO = iplBowlingCsv.slNo;
         Avg = iplBowlingCsv.Avg;
         playerName = iplBowlingCsv.playerName;
-
-        //  Econ = iplBowlingCsv.Econ;
-       SR = iplBowlingCsv.SR;
+        Econ = iplBowlingCsv.Econ;
+        SR = iplBowlingCsv.SR;
 
     }
 }
