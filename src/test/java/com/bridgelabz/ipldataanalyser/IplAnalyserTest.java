@@ -163,4 +163,17 @@ public class IplAnalyserTest {
             e.printStackTrace();
         }
     }
+    @Test
+    public void givenIPLData_Should_Return_Top_StrikeRateAndTopAvg() {
+        try {
+            IplAnalyser iplAnalyser = new IplAnalyser();
+            iplAnalyser.LoadIplBowlingData(IPL_BOWLING_FILE_PATH);
+            String sortedCensusData = iplAnalyser.getTopAvgAndStrikeRateOftheBowler();
+            IplBowlingCsv censusCsv[] = new Gson().fromJson(sortedCensusData, IplBowlingCsv[].class);
+            Assert.assertEquals("Alzarri Joseph", censusCsv[0].playerName);
+            System.out.println(censusCsv[0]);
+        } catch (IplAnalyserException e) {
+            e.printStackTrace();
+        }
+    }
 }

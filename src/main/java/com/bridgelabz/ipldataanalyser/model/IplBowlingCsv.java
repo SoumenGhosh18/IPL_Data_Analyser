@@ -8,8 +8,8 @@ public class IplBowlingCsv {
     @CsvBindByName(column = "PLAYER", required = true)
     public String playerName;
 
-//    @CsvBindByName(column = "Wkts", required = true)
-//    public String Wkts;
+//    @CsvBindByName(column = "4w", required = true)
+//    public String 4w;
 
     @CsvBindByName(column = "Avg", required = true)
     public double Avg;
