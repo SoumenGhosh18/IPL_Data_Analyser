@@ -2,6 +2,7 @@ package com.bridgelabz.ipldataanalyser;
 
 import com.bridgelabz.ipldataanalyser.exception.IplAnalyserException;
 import com.bridgelabz.ipldataanalyser.model.IplBattingCsv;
+import com.bridgelabz.ipldataanalyser.model.IplBowlingCsv;
 import com.bridgelabz.ipldataanalyser.service.IplAnalyser;
 import com.google.gson.Gson;
 import org.junit.Assert;
@@ -115,6 +116,20 @@ public class IplAnalyserTest {
             String sortedCensusData = iplAnalyser.getTopRunWithBestStrikeRate();
             IplBattingCsv censusCsv[] = new Gson().fromJson(sortedCensusData, IplBattingCsv[].class);
             Assert.assertEquals("David Warner", censusCsv[0].playerName);
+            System.out.println(censusCsv[0]);
+        } catch (IplAnalyserException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void givenIPLMostWicketsCSVFile_ShouldReturn_BestBowlingAverage() {
+        try {
+            IplAnalyser iplAnalyser = new IplAnalyser();
+            iplAnalyser.LoadIplBowlingData(IPL_BOWLING_FILE_PATH);
+            String sortedCensusData = iplAnalyser.getTopBowlingAvg();
+            IplBowlingCsv censusCsv[] = new Gson().fromJson(sortedCensusData, IplBowlingCsv[].class);
+            Assert.assertEquals("Krishnappa Gowtham",censusCsv[0].playerName);
             System.out.println(censusCsv[0]);
         } catch (IplAnalyserException e) {
             e.printStackTrace();
