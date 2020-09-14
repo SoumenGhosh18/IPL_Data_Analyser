@@ -190,6 +190,7 @@ public class IplAnalyserTest {
             e.printStackTrace();
         }
     }
+
     @Test
     public void givenIPLData_Should_Return_The_Batsman_Who_Has_Max100() {
         try {
@@ -198,6 +199,20 @@ public class IplAnalyserTest {
             String sortedCensusData = iplAnalyser.getIplSortingDataInDescending(EnumSorting.MAX100);
             IplBattingCsv censusCsv[] = new Gson().fromJson(sortedCensusData, IplBattingCsv[].class);
             Assert.assertEquals("Sanju Samson", censusCsv[0].playerName);
+            System.out.println(censusCsv[0]);
+        } catch (IplAnalyserException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void givenIPLData_Should_Return_best_4W_5W_And_Avg() {
+        try {
+            IplAnalyser iplAnalyser = new IplAnalyser();
+            iplAnalyser.LoadIplBowlingData(IPL_BOWLING_FILE_PATH);
+            String sortedCensusData = iplAnalyser.getIplSortingDataInDescending(EnumSorting.BEST_BOWL_4W_5W_And_Avg);
+            IplBowlingCsv censusCsv[] = new Gson().fromJson(sortedCensusData, IplBowlingCsv[].class);
+            Assert.assertEquals("Krishnappa Gowtham", censusCsv[0].playerName);
             System.out.println(censusCsv[0]);
         } catch (IplAnalyserException e) {
             e.printStackTrace();

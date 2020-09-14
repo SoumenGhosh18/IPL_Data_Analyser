@@ -69,11 +69,11 @@ public enum EnumSorting {
                 return IplCensusComparator;
             }
         },
-        BEST_BOWL_4W_5W {
+        BEST_BOWL_4W_5W_And_Avg {
             @Override
             public Comparator<IplDao> sortData() {
                 Comparator<IplDao> IplCensusComparator = Comparator.
-                        comparing(census -> (census.highest5W + census.highest4W));
+                        comparing(census -> (census.highest5W + census.highest4W + census.Avg));
                 return IplCensusComparator;
             }
         },
@@ -89,13 +89,6 @@ public enum EnumSorting {
         @Override
         public Comparator<IplDao> sortData() {
             Comparator<IplDao> IplCensusComparator = Comparator.comparing(census -> census.max100);
-            return IplCensusComparator;
-        }
-    },
-    MAX50 {
-        @Override
-        public Comparator<IplDao> sortData() {
-            Comparator<IplDao> IplCensusComparator = Comparator.comparing(census -> census.max50);
             return IplCensusComparator;
         }
     },
