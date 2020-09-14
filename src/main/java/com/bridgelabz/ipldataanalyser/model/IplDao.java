@@ -1,5 +1,5 @@
 package com.bridgelabz.ipldataanalyser.model;
-//Mat,Inns,Ov,Runs,Wkts,BBI,Avg,Econ,SR,4w,5w,
+
 public class IplDao {
     public int slNO;
     public String playerName;
@@ -13,6 +13,10 @@ public class IplDao {
     public String Econ;
     public String SR;
     public String Wkts;
+    public int max100;
+    public int max50;
+    public int highest4W;
+    public int highest5W;
 
     public IplDao(IplBattingCsv iplBattingCsv) {
         slNO = iplBattingCsv.slNo;
@@ -21,17 +25,21 @@ public class IplDao {
         sr = iplBattingCsv.sr;
         highest6s = iplBattingCsv.highest6s;
         highest4s = iplBattingCsv.highest4s;
-        Inns =iplBattingCsv.Inns;
-        Runs =iplBattingCsv.Runs;
+        Inns = iplBattingCsv.Inns;
+        Runs = iplBattingCsv.Runs;
+        max50 = iplBattingCsv.max50;
+        max100 = iplBattingCsv.max100;
     }
 
-    public IplDao(IplBowlingCsv iplBowlingCsv){
+    public IplDao(IplBowlingCsv iplBowlingCsv) {
         slNO = iplBowlingCsv.slNo;
         Avg = iplBowlingCsv.Avg;
         playerName = iplBowlingCsv.playerName;
         Econ = iplBowlingCsv.Econ;
         SR = iplBowlingCsv.SR;
         Wkts = iplBowlingCsv.Wkts;
+        highest4W = iplBowlingCsv.highest4W;
+        highest5W = iplBowlingCsv.highest5W;
 
     }
 }

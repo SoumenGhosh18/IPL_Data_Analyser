@@ -4,6 +4,7 @@ import com.bridgelabz.ipldataanalyser.exception.IplAnalyserException;
 import com.bridgelabz.ipldataanalyser.model.IplBattingCsv;
 import com.bridgelabz.ipldataanalyser.model.IplBowlingCsv;
 import com.bridgelabz.ipldataanalyser.service.IplAnalyser;
+import com.bridgelabz.ipldataanalyser.utility.EnumSorting;
 import com.google.gson.Gson;
 import org.junit.Assert;
 import org.junit.Test;
@@ -40,7 +41,7 @@ public class IplAnalyserTest {
         try {
             IplAnalyser iplAnalyser = new IplAnalyser();
             iplAnalyser.LoadIplBattingData(IPL_BATTING_FILE_PATH);
-            String sortedCensusData = iplAnalyser.getBestBattingAvg();
+            String sortedCensusData = iplAnalyser.getIplSortingDataInDescending(EnumSorting.TOP_BAT_AVG);
             IplBattingCsv censusCsv[] = new Gson().fromJson(sortedCensusData, IplBattingCsv[].class);
             Assert.assertEquals("MS Dhoni", censusCsv[0].playerName);
             System.out.println(censusCsv[0]);
@@ -54,10 +55,8 @@ public class IplAnalyserTest {
         try {
             IplAnalyser iplAnalyser = new IplAnalyser();
             iplAnalyser.LoadIplBattingData(IPL_BATTING_FILE_PATH);
-            String sortedCensusData = iplAnalyser.getHighest6s();
-            String sortedCensusData1 = iplAnalyser.getHighest4s();
+            String sortedCensusData = iplAnalyser.getIplSortingDataInDescending(EnumSorting.MAX_6s_4s);
             IplBattingCsv censusCsv[] = new Gson().fromJson(sortedCensusData, IplBattingCsv[].class);
-            IplBattingCsv censusCsv1[] = new Gson().fromJson(sortedCensusData1, IplBattingCsv[].class);
             Assert.assertEquals("Andre Russell", censusCsv[0].playerName);
             System.out.println(censusCsv[0]);
         } catch (IplAnalyserException e) {
@@ -70,7 +69,7 @@ public class IplAnalyserTest {
         try {
             IplAnalyser iplAnalyser = new IplAnalyser();
             iplAnalyser.LoadIplBattingData(IPL_BATTING_FILE_PATH);
-            String sortedCensusData = iplAnalyser.getBestBattingSR();
+            String sortedCensusData = iplAnalyser.getIplSortingDataInDescending(EnumSorting.TOP_BAT_SR);
             IplBattingCsv censusCsv[] = new Gson().fromJson(sortedCensusData, IplBattingCsv[].class);
             Assert.assertEquals("Ishant Sharma", censusCsv[0].playerName);
             System.out.println(censusCsv[0]);
@@ -84,9 +83,9 @@ public class IplAnalyserTest {
         try {
             IplAnalyser iplAnalyser = new IplAnalyser();
             iplAnalyser.LoadIplBattingData(IPL_BATTING_FILE_PATH);
-            String sortedCensusData = iplAnalyser.getHighestStrikeRateWith6sAnd4s();
+            String sortedCensusData = iplAnalyser.getIplSortingDataInDescending(EnumSorting.MAX_6s_4s_With_SR);
             IplBattingCsv censusCsv[] = new Gson().fromJson(sortedCensusData, IplBattingCsv[].class);
-            Assert.assertEquals("Andre Russell", censusCsv[0].playerName);
+            Assert.assertEquals("Ishant Sharma", censusCsv[0].playerName);
             System.out.println(censusCsv[0]);
         } catch (IplAnalyserException e) {
             e.printStackTrace();
@@ -99,9 +98,9 @@ public class IplAnalyserTest {
         try {
             IplAnalyser iplAnalyser = new IplAnalyser();
             iplAnalyser.LoadIplBattingData(IPL_BATTING_FILE_PATH);
-            String sortedCensusData = iplAnalyser.getBestAvgWithGreatStrikeRate();
+            String sortedCensusData = iplAnalyser.getIplSortingDataInDescending(EnumSorting.TOP_BAT_AVG_WITH_BEST_SR);
             IplBattingCsv censusCsv[] = new Gson().fromJson(sortedCensusData, IplBattingCsv[].class);
-            Assert.assertEquals("Ishant Sharma", censusCsv[0].playerName);
+            Assert.assertEquals("Andre Russell", censusCsv[0].playerName);
             System.out.println(censusCsv[0]);
         } catch (IplAnalyserException e) {
             e.printStackTrace();
@@ -113,7 +112,7 @@ public class IplAnalyserTest {
         try {
             IplAnalyser iplAnalyser = new IplAnalyser();
             iplAnalyser.LoadIplBattingData(IPL_BATTING_FILE_PATH);
-            String sortedCensusData = iplAnalyser.getTopRunWithBestStrikeRate();
+            String sortedCensusData = iplAnalyser.getIplSortingDataInDescending(EnumSorting.TOP_RUNS_OF_PLAYER);
             IplBattingCsv censusCsv[] = new Gson().fromJson(sortedCensusData, IplBattingCsv[].class);
             Assert.assertEquals("David Warner", censusCsv[0].playerName);
             System.out.println(censusCsv[0]);
@@ -127,7 +126,7 @@ public class IplAnalyserTest {
         try {
             IplAnalyser iplAnalyser = new IplAnalyser();
             iplAnalyser.LoadIplBowlingData(IPL_BOWLING_FILE_PATH);
-            String sortedCensusData = iplAnalyser.getTopBowlingAvg();
+            String sortedCensusData = iplAnalyser.getIplSortingDataInDescending(EnumSorting.BEST_BOWL_AVG);
             IplBowlingCsv censusCsv[] = new Gson().fromJson(sortedCensusData, IplBowlingCsv[].class);
             Assert.assertEquals("Krishnappa Gowtham", censusCsv[0].playerName);
             System.out.println(censusCsv[0]);
@@ -141,9 +140,9 @@ public class IplAnalyserTest {
         try {
             IplAnalyser iplAnalyser = new IplAnalyser();
             iplAnalyser.LoadIplBowlingData(IPL_BOWLING_FILE_PATH);
-            String sortedCensusData = iplAnalyser.getTopStrikeRateOftheBowler();
+            String sortedCensusData = iplAnalyser.getIplSortingDataInDescending(EnumSorting.BEST_BOWL_SR);
             IplBowlingCsv censusCsv[] = new Gson().fromJson(sortedCensusData, IplBowlingCsv[].class);
-            Assert.assertEquals("Umesh Yadav", censusCsv[0].playerName);
+            Assert.assertEquals("Prasidh Krishna", censusCsv[0].playerName);
             System.out.println(censusCsv[0]);
         } catch (IplAnalyserException e) {
             e.printStackTrace();
@@ -155,7 +154,7 @@ public class IplAnalyserTest {
         try {
             IplAnalyser iplAnalyser = new IplAnalyser();
             iplAnalyser.LoadIplBowlingData(IPL_BOWLING_FILE_PATH);
-            String sortedCensusData = iplAnalyser.getTopEconomyRateOftheBowler();
+            String sortedCensusData = iplAnalyser.getIplSortingDataInDescending(EnumSorting.BEST_BOWL_ECON);
             IplBowlingCsv censusCsv[] = new Gson().fromJson(sortedCensusData, IplBowlingCsv[].class);
             Assert.assertEquals("Mayank Markande", censusCsv[0].playerName);
             System.out.println(censusCsv[0]);
@@ -163,30 +162,46 @@ public class IplAnalyserTest {
             e.printStackTrace();
         }
     }
+
     @Test
     public void givenIPLData_Should_Return_Top_StrikeRateAndTopAvg() {
         try {
             IplAnalyser iplAnalyser = new IplAnalyser();
             iplAnalyser.LoadIplBowlingData(IPL_BOWLING_FILE_PATH);
-            String sortedCensusData = iplAnalyser.getTopAvgAndStrikeRateOftheBowler();
+            String sortedCensusData = iplAnalyser.getIplSortingDataInDescending(EnumSorting.BEST_BOWL_AVG_AND_BEST_SR);
             IplBowlingCsv censusCsv[] = new Gson().fromJson(sortedCensusData, IplBowlingCsv[].class);
-            Assert.assertEquals("Alzarri Joseph", censusCsv[0].playerName);
+            Assert.assertEquals("Prasidh Krishna", censusCsv[0].playerName);
+            System.out.println(censusCsv[0]);
+        } catch (IplAnalyserException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void givenIPLData_Should_Return_Top_Wicket_AndTopAvg() {
+        try {
+            IplAnalyser iplAnalyser = new IplAnalyser();
+            iplAnalyser.LoadIplBowlingData(IPL_BOWLING_FILE_PATH);
+            String sortedCensusData = iplAnalyser.getIplSortingDataInDescending(EnumSorting.HIGHEST_WICKETS);
+            IplBowlingCsv censusCsv[] = new Gson().fromJson(sortedCensusData, IplBowlingCsv[].class);
+            Assert.assertEquals("Umesh Yadav", censusCsv[0].playerName);
             System.out.println(censusCsv[0]);
         } catch (IplAnalyserException e) {
             e.printStackTrace();
         }
     }
     @Test
-    public void givenIPLData_Should_Return_Top_Wicket_AndTopAvg() {
+    public void givenIPLData_Should_Return_The_Batsman_Who_Has_Max100() {
         try {
             IplAnalyser iplAnalyser = new IplAnalyser();
-            iplAnalyser.LoadIplBowlingData(IPL_BOWLING_FILE_PATH);
-            String sortedCensusData = iplAnalyser.getTopWkctWithBestAvgOftheBowler();
-            IplBowlingCsv censusCsv[] = new Gson().fromJson(sortedCensusData, IplBowlingCsv[].class);
-            Assert.assertEquals("Keemo Paul", censusCsv[0].playerName);
+            iplAnalyser.LoadIplBattingData(IPL_BATTING_FILE_PATH);
+            String sortedCensusData = iplAnalyser.getIplSortingDataInDescending(EnumSorting.MAX100);
+            IplBattingCsv censusCsv[] = new Gson().fromJson(sortedCensusData, IplBattingCsv[].class);
+            Assert.assertEquals("Sanju Samson", censusCsv[0].playerName);
             System.out.println(censusCsv[0]);
         } catch (IplAnalyserException e) {
             e.printStackTrace();
         }
     }
 }
+

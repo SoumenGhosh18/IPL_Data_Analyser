@@ -1,12 +1,14 @@
 package com.bridgelabz.ipldataanalyser.model;
+
 import com.opencsv.bean.CsvBindByName;
+
 public class IplBattingCsv {
     @CsvBindByName(column = "POS", required = true)
     public int slNo;
     @CsvBindByName(column = "PLAYER", required = true)
     public String playerName;
     @CsvBindByName(column = "Avg", required = true)
-     public double avg;
+    public double avg;
     @CsvBindByName(column = "SR", required = true)
     public double sr;
     @CsvBindByName(column = "6s", required = true)
@@ -17,6 +19,10 @@ public class IplBattingCsv {
     public int Inns;
     @CsvBindByName(column = "Runs", required = true)
     public int Runs;
+    @CsvBindByName(column = "100", required = true)
+    public int max100;
+    @CsvBindByName(column = "50", required = true)
+    public int max50;
 
     @Override
     public String toString() {
@@ -29,6 +35,8 @@ public class IplBattingCsv {
                 ", highest4s=" + highest4s +
                 ", Inns=" + Inns +
                 ", Runs=" + Runs +
+                ", max100=" + max100 +
+                ", max50=" + max50 +
                 '}';
     }
 }
